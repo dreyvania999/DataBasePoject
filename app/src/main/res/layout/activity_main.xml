@@ -62,7 +62,7 @@
         android:id="@+id/outName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Имя"
+        android:text="      Имя"
         app:layout_constraintTop_toBottomOf="@+id/btnClear"
         app:layout_constraintEnd_toStartOf="@+id/outSurname"
         app:layout_constraintStart_toEndOf="@+id/outID"/>
@@ -89,10 +89,11 @@
         android:id="@+id/outAdress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
         android:text="Адрес"
-        app:layout_constraintTop_toBottomOf="@+id/btnClear"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/outPhone"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/btnClear" />
 
     <TableLayout
         android:id="@+id/DBoutput"
@@ -101,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdd">
+        app:layout_constraintTop_toBottomOf="@+id/outAdress">
 
 
         <TableRow

@@ -60,33 +60,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 DBoutputROW.addView(outputID);
 
                 TextView outputName= new TextView(this);
-                params.weight = 1.5f;
+                params.weight = 2.0f;
                 outputName.setLayoutParams(params);
                 outputName.setText(cursor.getString(nameIndex));
                 DBoutputROW.addView(outputName);
 
                 TextView outputSurname= new TextView(this);
-                params.weight = 1.5f;
+                params.weight = 2.0f;
                 outputSurname.setLayoutParams(params);
                 outputSurname.setText(cursor.getString(surnameIndex));
                 DBoutputROW.addView(outputSurname);
 
                 TextView outputPhone= new TextView(this);
-                params.weight = 1.5f;
+                params.weight = 2.0f;
                 outputPhone.setLayoutParams(params);
                 outputPhone.setText(cursor.getString(phoneIndex));
                 DBoutputROW.addView(outputPhone);
 
                 TextView outputAddress= new TextView(this);
-                params.weight = 1.5f;
+                params.weight = 2.0f;
                 outputAddress.setLayoutParams(params);
                 outputAddress.setText(cursor.getString(addressIndex));
                 DBoutputROW.addView(outputAddress);
 
                 Button deleteButton = new Button(this);
                 deleteButton.setOnClickListener(this);
-                params.weight =10f;
-                deleteButton.setLayoutParams(params);
+
                 deleteButton.setText("X");
                 deleteButton.setId(cursor.getInt(idIndex));
                 DBoutputROW.addView(deleteButton);
