@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DataBasePoject">
         <activity
+            android:name=".Users"
+            android:exported="false" />
+        <activity
+            android:name=".Activation"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

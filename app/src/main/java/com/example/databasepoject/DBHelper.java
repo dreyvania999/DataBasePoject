@@ -15,6 +15,12 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String Surname = "surname";
     public static final String Address = "address";
     public static final String Сontacts = "contacts";
+    public static final String Login = "login";
+    public static final String Password = "password";
+    public static final String Registration = "registration";
+
+
+
 
 
     public DBHelper(Context context) {
@@ -26,12 +32,16 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("create table " + Сontacts + "(" + KEY_ID
                 + " integer primary key," + Name + " text," + Phone + " text," + Surname + " text," + Address + " text" + ")");
+        sqLiteDatabase.execSQL("create table " + Registration + "(" + KEY_ID
+                + " integer primary key," + Login + " text," + Password + " text" + ")");
+        sqLiteDatabase.execSQL("insert into " + Registration + "("  + Login + " ," + Password  + ")"+"values"+"("  + "admin"  + "admin"  + ")");
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("drop table if exists " + Сontacts);
-
+        sqLiteDatabase.execSQL("drop table if exists " + Registration);
         onCreate(sqLiteDatabase);
     }
 }

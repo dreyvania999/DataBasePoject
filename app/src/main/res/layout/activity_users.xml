@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Users">
+
+    <TextView android:id="@+id/outID"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        android:text="ID"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/outName"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/outName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="      Имя"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/outSurname"
+        app:layout_constraintStart_toEndOf="@+id/outID"/>
+
+    <TextView
+        android:id="@+id/outSurname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Фамилия"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/outPhone"
+        app:layout_constraintStart_toEndOf="@+id/outName"/>
+
+    <TextView
+        android:id="@+id/outPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Телефон"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/outAdress"
+        app:layout_constraintStart_toEndOf="@+id/outSurname"/>
+
+    <TextView
+        android:id="@+id/outAdress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:text="Адрес"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/outPhone"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/DBoutput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outAdress">
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
