@@ -6,6 +6,8 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -22,6 +24,7 @@ public class Users extends AppCompatActivity {
     SQLiteDatabase DB;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,7 @@ public class Users extends AppCompatActivity {
         DBHelper = new DBHelper(this);
         DB = DBHelper.getWritableDatabase();
         UpdateDB();
+
 
     }
 
@@ -41,43 +45,43 @@ public class Users extends AppCompatActivity {
             int phoneIndex = cursor.getColumnIndex(DBHelper.Phone);
             int surnameIndex = cursor.getColumnIndex(DBHelper.Surname);
             int addressIndex = cursor.getColumnIndex(DBHelper.Address);
-            TableLayout DBoutput = findViewById(R.id.DBoutput);
+            TableLayout DBoutput = findViewById(R.id.DBoutput1);
             DBoutput.removeAllViews();
             do {
                 TableRow DBoutputROW = new TableRow(this);
-                DBoutputROW.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
+                DBoutputROW.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT));
+                TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,TableRow.LayoutParams.WRAP_CONTENT);
 
-                TextView outputID = new TextView(this);
+                TextView outputID= new TextView(this);
                 params.weight = 1.0f;
                 outputID.setLayoutParams(params);
                 outputID.setText(cursor.getString(idIndex));
                 DBoutputROW.addView(outputID);
 
-                TextView outputName = new TextView(this);
+                TextView outputName= new TextView(this);
                 params.weight = 2.0f;
                 outputName.setLayoutParams(params);
                 outputName.setText(cursor.getString(nameIndex));
                 DBoutputROW.addView(outputName);
 
-                TextView outputSurname = new TextView(this);
+                TextView outputSurname= new TextView(this);
                 params.weight = 2.0f;
                 outputSurname.setLayoutParams(params);
                 outputSurname.setText(cursor.getString(surnameIndex));
                 DBoutputROW.addView(outputSurname);
 
-                TextView outputPhone = new TextView(this);
+                TextView outputPhone= new TextView(this);
                 params.weight = 2.0f;
                 outputPhone.setLayoutParams(params);
                 outputPhone.setText(cursor.getString(phoneIndex));
                 DBoutputROW.addView(outputPhone);
 
-                TextView outputAddress = new TextView(this);
+                TextView outputAddress= new TextView(this);
                 params.weight = 2.0f;
                 outputAddress.setLayoutParams(params);
                 outputAddress.setText(cursor.getString(addressIndex));
                 DBoutputROW.addView(outputAddress);
-
+                DBoutput.addView(DBoutputROW);
 
             } while (cursor.moveToNext());
         }
